@@ -49,7 +49,7 @@ class User extends Authenticatable
             $firstPart = substr($firstPart, 0, $plusIndex);
 
         // return (new) username@domain
-        $this->email = $firstPart . '@' . (isset($parts[1]) ? $parts[1] : null);
+        $this->attributes['email'] = $firstPart . '@' . (isset($parts[1]) ? $parts[1] : null);
     }
 
     public function posts()
